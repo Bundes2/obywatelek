@@ -1,20 +1,26 @@
 
 <!-- saved from url=(0081)https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/dowodnowy.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script src="./dowodnowy_files/sw.js.pobrane"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    
     <meta name="viewport" content="width=device-width">
     <title>mObywatel 2.0</title>
+    
+    <!-- PWA & App Manifest -->
+    <link rel="manifest" href="/obywatelek/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="mObywatel">
+    <link rel="apple-touch-icon" href="/obywatelek/dowodnowy_files/mobywatellogo.svg">
+    
+    <!-- Favicon -->
     <link rel="shortcut icon" href="https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/mobywatellogo.svg" type="image/x-icon">
-    <meta name="theme-color" content="#fff">
+    <link rel="icon" href="/obywatelek/dowodnowy_files/mobywatellogo.svg" type="image/svg+xml">
+    
     <meta name="next-head-count" content="5">
     <link rel="preload" href="./dowodnowy_files/main.css" as="style">
-    <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="./dowodnowy_files/main.css" data-n-g="">
-  <link href="./dowodnowy_files/css" rel="stylesheet">
-    <link rel="manifest" href="./manifest.json">
+    <link href="./dowodnowy_files/css" rel="stylesheet">
 
     <noscript data-n-css=""></noscript>
     <style>
@@ -468,10 +474,22 @@
   <script>
     // PWA Service Worker Registration
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./service-worker.js')
-        .then(reg => console.log('✓ Service Worker registered'))
-        .catch(err => console.log('✗ SW registration failed:', err));
+      navigator.serviceWorker.register('/obywatelek/service-worker.js')
+        .then(reg => {
+          console.log('✓ Service Worker registered', reg);
+        })
+        .catch(err => {
+          console.log('✗ SW registration failed:', err);
+        });
     }
+
+    // PWA Install Prompt
+    let deferredPrompt;
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+      console.log('✓ Install prompt ready');
+    });
 
     document.getElementById("aktualizuj").addEventListener("click", function() {
       window.location.href = "dashboard.html";
