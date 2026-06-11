@@ -1,37 +1,27 @@
-
-<!-- saved from url=(0067)https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/ -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>
-    if(location.protocol == 'http:') location.protocol = 'https:';
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Service Worker registered', reg))
-        .catch(err => console.error('Service Worker **not** registered', err));
-    }
-    else {
-      console.warn('Service Worker not supported in this browser');
-    }    
-  </script>
-
-    <script src="./mObywatel 2.0_files/sw.js.pobrane"></script>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-    
+    <meta name="description" content="Mobilna aplikacja do zarządzania dokumentami i dowodem osobistym">
     <meta name="theme-color" content="#FFFFFF">
-    <meta name="viewport" content="width=device-width">
-
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="mObywatel">
+    
     <title>mObywatel 2.0</title>
-
-    <link rel="shortcut icon" href="https://v2dejm65o0n5id4xylvc.ct8.pl/ObywatelekHUB_admin_cYrli2ky7g/mobywatellogo.svg" type="image/x-icon">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#fff">
-    <meta name="next-head-count" content="5">
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="https://v2dejm65o0n5id4xylvc.ct8.pl/manifest.json">
-
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link href="./mObywatel 2.0_files/all.min.css" rel="stylesheet">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/obywatelek/manifest.json">
+    
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/obywatelek/icon-192x192.png" type="image/png">
+    <link rel="icon" href="/obywatelek/icon-192x192.png" type="image/png">
+    <link rel="apple-touch-icon" href="/obywatelek/icon-192x192.png">
+    
+    <!-- Styles -->
+    <link href="/obywatelek/mObywatel 2.0_files/all.min.css" rel="stylesheet">
+    
     <style>
         @font-face {
             font-family: Roboto;
@@ -120,7 +110,6 @@
             }
         }
 
-
         body, html {
             height: 100%;
             overscroll-behavior-y: contain;
@@ -129,13 +118,6 @@
             font-family: Roboto, sans-serif;
             background: #f5f6fb;
             color: #131419;
-        }
-
-        
-        @supports (-webkit-touch-callout: none) {
-            .dzit {
-                margin-bottom: 1.0rem;
-            }
         }
 
         a {
@@ -315,60 +297,60 @@
         }
     </style>
 
-<link id="chromealerabat-link" rel="stylesheet" type="text/css" href="chrome-extension://dacdinoicboceafielngnmjjplncljhj/content.css"></head>
+    <script>
+        // Force HTTPS
+        if(location.protocol == 'http:') location.protocol = 'https:';
+        
+        // Register Service Worker
+        if('serviceWorker' in navigator) {
+          navigator.serviceWorker.register('/obywatelek/service-worker.js')
+            .then(reg => console.log('Service Worker registered', reg))
+            .catch(err => console.error('Service Worker **not** registered', err));
+        }
+        else {
+          console.warn('Service Worker not supported in this browser');
+        }
+    </script>
+</head>
 <body>
-        <div class="dynamic-panel">
-    <div class="Login_container_1">
-        <main class="Login_main_1">
-            <img src="./mObywatel 2.0_files/coi_common_ic_mobywatel_horizontal_logo_text.svg" alt="Logo" class="Login_logoTop">
+    <div class="dynamic-panel">
+        <div class="Login_container_1">
+            <main class="Login_main_1">
+                <img src="/obywatelek/mObywatel 2.0_files/coi_common_ic_mobywatel_horizontal_logo_text.svg" alt="Logo" class="Login_logoTop">
 
-            <div class="Login_changePassword_1">
-                <br>
-                <br>
-                <br>
-                <br>
-                
-                <img src="./mObywatel 2.0_files/aa008_change_password_blue.svg" alt="Change Password" class="Login_changePasswordIcon">
-            </div>
-
-            <p style="font-weight: 500; font-size: 5vw; margin-bottom: 1em; margin-top: 2em;  font-weight: bold;">Wpisz hasło</p>
-            <div class="Login_bioLogin">
-                <p class="tekst_biometeria">Logowanie biometrią</p>
-            </div>
-            <div class="Login_passwordSection">
-                <p class="Login_passwordLabel">Hasło</p>
-                <div class="Login_passwordContainer">
-                    <input type="password" placeholder="Wpisz hasło" class="Login_passwordInput">
-                   
+                <div class="Login_changePassword_1">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <img src="/obywatelek/mObywatel 2.0_files/aa008_change_password_blue.svg" alt="Change Password" class="Login_changePasswordIcon">
                 </div>
-                <p class="Login_forgotPassword">Nie pamiętam hasła</p>
-            </div>
-        </main>
-        <button class="Login_submitButton" onclick="window.location.href=&#39;dashboard.html&#39;;">
-            <p>Zaloguj się</p>
-        </button>
-        <footer class="Login_footer">
-            <div class="Login_footerImages">
-                <img src="./mObywatel 2.0_files/coi_common_ui_ic_coi_mobywatel_logo.svg" alt="Footer Image 1" style="width: 5em; height: auto;">
-                <img src="./mObywatel 2.0_files/coi_common_ui_ic_mc_mobywatel_logo.svg" alt="Footer Image 2" style="width: 4em; height: auto;">
-            </div>
-            <p class="Login_versionText">wersja 4.41.2 (8)</p>
-        </footer>
+
+                <p style="font-weight: 500; font-size: 5vw; margin-bottom: 1em; margin-top: 2em;  font-weight: bold;">Wpisz hasło</p>
+                <div class="Login_bioLogin">
+                    <p class="tekst_biometeria">Logowanie biometrią</p>
+                </div>
+                <div class="Login_passwordSection">
+                    <p class="Login_passwordLabel">Hasło</p>
+                    <div class="Login_passwordContainer">
+                        <input type="password" placeholder="Wpisz hasło" class="Login_passwordInput">
+                       
+                    </div>
+                    <p class="Login_forgotPassword">Nie pamiętam hasła</p>
+                </div>
+            </main>
+            <button class="Login_submitButton" onclick="window.location.href='dashboard.html';">
+                <p>Zaloguj się</p>
+            </button>
+            <footer class="Login_footer">
+                <div class="Login_footerImages">
+                    <img src="/obywatelek/mObywatel 2.0_files/coi_common_ui_ic_coi_mobywatel_logo.svg" alt="Footer Image 1" style="width: 5em; height: auto;">
+                    <img src="/obywatelek/mObywatel 2.0_files/coi_common_ui_ic_mc_mobywatel_logo.svg" alt="Footer Image 2" style="width: 4em; height: auto;">
+                </div>
+                <p class="Login_versionText">wersja 4.41.2 (8)</p>
+            </footer>
+        </div>
     </div>
-
-
-</div><audio class="audio-output" style="display: none;"></audio><div id="volume-booster-visusalizer">
-                    <div class="sound">
-                        <div class="sound-icon"></div>
-                        <div class="sound-wave sound-wave_one"></div>
-                        <div class="sound-wave sound-wave_two"></div>
-                        <div class="sound-wave sound-wave_three"></div>
-                    </div>
-                    <div class="segments-box">
-                        <div data-range="1-20" class="segment"><span></span></div>
-                        <div data-range="21-40" class="segment"><span></span></div>
-                        <div data-range="41-60" class="segment"><span></span></div>
-                        <div data-range="61-80" class="segment"><span></span></div>
-                        <div data-range="81-100" class="segment"><span></span></div>
-                    </div>
-                </div></body></html>
+</body>
+</html>
