@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="./dowodnowy_files/main.css" data-n-g="">
   <link href="./dowodnowy_files/css" rel="stylesheet">
-    <link rel="manifest" href="https://v2dejm65o0n5id4xylvc.ct8.pl/manifest.json">
+    <link rel="manifest" href="./manifest.json">
 
     <noscript data-n-css=""></noscript>
     <style>
@@ -272,12 +272,12 @@
         <img src="./dowodnowy_files/arrow.svg" alt="arrow" id="arrow">
     </a>
 
-    <div class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" onclick="wybordokumentumenu()">
+    <div class="buto" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);" onclick=[...]
         <img src="./dowodnowy_files/card.png" alt="card">
         <p style="margin-left: 10px; font-weight: bold;">Dane dokumentu</p>
         <img src="./dowodnowy_files/arrow.svg" alt="arrow" id="arrow">
     </div>    
-    <section class="collapsible buto" id="lo" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);">
+    <section class="collapsible buto" id="lo" style="cursor: pointer; display: flex; align-items: center; padding: 40px 20px ; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba([...]
         
         <p style="margin-left: -7px; font-weight: bold;">Twoje dodatkowe dane</p>
 
@@ -336,7 +336,7 @@
 
 
     <link rel="stylesheet" href="./dowodnowy_files/all.min.css">
-    <a class="buto" style="cursor: pointer; display: flex; align-items: left; padding: 10px 20px; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-decoration: none; font-family: Arial, sans-serif;" onclick="confirmDelete()">
+    <a class="buto" style="cursor: pointer; display: flex; align-items: left; padding: 10px 20px; border-radius: 10px; background-color: white; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); text-decoratio[...]
     <img style="margin-left: -7px;" src="./dowodnowy_files/kosz.png" alt="checkbox">
         <span style="color: red; font-size: 16px; font-weight: 550;">Usuń dokument</span>
     </a>
@@ -449,7 +449,7 @@
                             <p class="main"><strong></strong>IGNACY</p>
                         </section>
                         <p class="krecha2"></p>
-                        <section class4="dana">
+                        <section class="dana">
                             <p class="info">Imię mаtki</p>
                             <p class="main"><strong></strong>ALICJA</p>
                         </section>
@@ -466,6 +466,13 @@
     <script src="./dowodnowy_files/wybor.js.pobrane"></script>
     <script src="./dowodnowy_files/scale.js.pobrane"></script>
   <script>
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(reg => console.log('✓ Service Worker registered'))
+        .catch(err => console.log('✗ SW registration failed:', err));
+    }
+
     document.getElementById("aktualizuj").addEventListener("click", function() {
       window.location.href = "dashboard.html";
     });
