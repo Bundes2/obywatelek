@@ -1,7 +1,5 @@
 const CACHE_NAME = 'mobywatel-v1';
-const BASE_PATH = '/obywatelek';
-
-const urlsToCache = [
+const BASE_PATH = new URL('.', 'self.registration.scope).pathname';
   BASE_PATH + '/',
   BASE_PATH + '/index.html',
   BASE_PATH + '/dashboard.html',
@@ -16,16 +14,20 @@ const urlsToCache = [
 
 // Install event - cache files
 self.addEventListener('install', event => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      return cache.addAll(urlsToCache).catch(err => {
-        console.log('Some files could not be cached:', err);
-        return cache.addAll([BASE_PATH + '/']);
-      });
-    })
-  );
-  self.skipWaiting();
-});
+    event.waitUntil(
+        caches.open(CACHE_NAME).then(async cache => {
+              for (const url of urlsToCache) {
+                      try {
+                   await cache.add(url);
+                   } catch (e) {
+                   console.log('Cache fail:', url);
+                  }
+                 }
+              })
+            );
+
+           self.skipWaiting();
+          });
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', event => {
